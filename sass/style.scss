@@ -116,6 +116,7 @@ a {
     margin-left: 280px;
     padding: 0 20px;
     background-color: #ffffff;
+    text-align: center;
 }
 
 // ARTICLE POSTS
@@ -370,11 +371,11 @@ a {
 
 // CONTACT
 
-.table-contact {
+.table {
     display: table;
     height: 100%;
 
-    & .cell-contact {
+    & .cell {
         display: table-cell;
         vertical-align: middle;
 

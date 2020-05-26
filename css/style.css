@@ -142,6 +142,7 @@ a:hover {
   margin-left: 280px;
   padding: 0 20px;
   background-color: #ffffff;
+  text-align: center;
 }
 
 .post {
@@ -358,17 +359,17 @@ a:hover {
   margin-right: 5px;
 }
 
-.table-contact {
+.table {
   display: table;
   height: 100%;
 }
 
-.table-contact .cell-contact {
+.table .cell {
   display: table-cell;
   vertical-align: middle;
 }
 
-.table-contact .cell-contact .btn {
+.table .cell .btn {
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 1px;
@@ -384,7 +385,7 @@ a:hover {
   color: #fff;
 }
 
-.table-contact .cell-contact .btn:hover {
+.table .cell .btn:hover {
   color: #ffaace;
   background: #fff;
 }
