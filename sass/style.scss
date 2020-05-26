@@ -1,0 +1,501 @@
+@import "./maps", "./reset", "./variables";
+
+html {
+background-color: map-get($colors,background);
+}
+
+body {
+    background-color: map-get($colors,color-1);
+}
+
+.btn {
+    @include post-button-normal;
+
+    &:hover {
+        color: #fff;
+        background: map-get($colors,btn);
+    }
+}
+
+a {
+    transition: 0.25s;
+
+    &:hover {
+        color: map-get($colors,color-1);
+    }
+}
+
+// SCROLLBAR 
+
+::-webkit-scrollbar {
+    width:15px;
+
+    &-track {
+        background-color: #fff;
+    }
+
+    &-thumb {
+        background: map-get($colors,color-1);
+        border-radius: 10px;
+    }
+}
+
+// TOP MENU
+
+.navbar {
+    display: none;
+    background: map-get($colors,color-1);
+
+    &-brand {
+        width: 175px;
+    }
+
+    & a {
+        margin: auto;
+        width: 50%;
+        display: block;
+        color: white;
+        border-radius: 5px;
+        transition: 0.2s;
+        font-weight: 600;
+
+        &:hover {
+            background-color: white;
+            color: map-get($colors,color-1);
+        }
+    }
+}
+
+/* LEFT SIDE BAR */
+
+.leftmenu {
+    position: fixed;
+    width: 280px;
+    margin-top: 0;
+
+    &__menu {
+
+    }
+
+    &__list a {
+        color: #000;
+        display: block;
+        padding: 17px 20px 17px 45px;
+        font-size: 17px;
+        font-weight: 600;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+            background-color: map-get($colors,sidebar-hover);
+        }
+
+        &.active {
+            background-color: map-get($colors,sidebar-hover);
+        }
+    }
+
+    &__brand {
+        padding: 50px 0px;
+        text-align: center;
+        
+        & img {
+            height: 55px;
+        }
+    }
+
+    &__copyright {
+        margin-top: 15%;
+        padding-left: 40px;
+    }
+
+}
+
+// MAIN CONTENT
+
+.main {
+    margin-left: 280px;
+    padding: 0 20px;
+    background-color: #ffffff;
+}
+
+// ARTICLE POSTS
+
+.post {
+    margin-bottom: 45px; 
+
+    & + .post {
+        border-top: 1px solid map-get($colors,lines);
+        padding-top: 50px;
+    }
+
+    &__header {
+        margin: 0 0 30px;
+
+        &-title {
+            font-size: 22px;
+            margin: 0 0 10px;
+        }
+
+        &-info {
+            opacity: .7;
+            color: #000;
+            font-weight: 600;
+            padding-left: 1px;
+
+            & .iconify {
+                font-size: 14px;
+                position: relative;
+                bottom: 1px;
+                left: -2px;
+            }
+
+            & li {
+                display: inline-block;
+                margin-right: 30px;
+                font-size: 14px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    &__img {
+        margin-bottom: 25px;
+        transition: $tr-simple;
+
+        &:hover {
+            opacity: .7;
+        }
+    
+    }
+
+    &__video {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        margin-bottom: 25px;
+        height: 0;
+        width: 97%;
+
+        & iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+    &__content {
+
+        h1,h2,h3,h4,h5,h6 {
+            margin: 30px 0 20px;
+        }
+
+        p, ul, ol {
+            margin: 0 0 20px;
+            line-height: 24px;
+            font-size: 15px;
+        }
+
+        &-tags {
+        
+            & h6 {
+                margin: 30px 0 15px;
+            }
+
+            & a {
+            background: #f5f5f5;
+            border-radius: 2px;
+            color: #303133;
+            font-weight: 700;
+            display: inline-block;
+            font-size: 10px;
+            letter-spacing: 1px;
+            margin: 5px 10px 5px 0;
+            padding: 7px 8px 5px 10px;
+            text-transform: uppercase;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                background: map-get($colors,color-1)
+            }
+            }
+        }
+    }
+
+    & .iconify {
+        font-size: 15px;
+        position: relative;
+        bottom: 1.5px;
+    }
+
+    &__readmore {
+        text-align: end;
+    }
+
+
+}
+
+// RIGHT SIDEBAR
+
+.sidebar {
+        font-size: 14px;
+
+    &-section {
+        margin: 0 0 40px;
+    }
+
+    &__search {
+
+        &-form {
+            position: relative;
+
+            &-text {
+
+            }
+
+            &-button {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                right: 10px;
+                background-color: transparent;
+                border: none;
+                font-size: 20px;
+                -webkit-transition: all .3s ease-out;
+                transition: all .3s ease-out;
+
+                &:focus, {
+                    outline: 0;
+                }
+
+            }
+
+        }
+        
+    }
+
+    &__title {
+        position: relative;
+        font-size: 15px;
+        margin-bottom: 25px;
+        font-weight: 700;
+        text-transform: uppercase;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 35px;
+                position: relative;
+                margin: 20px auto 25px 0px;
+                border-bottom: 1px solid map-get($colors,btn)
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                border-bottom: 1px solid map-get($colors,lines);
+            }
+    }
+
+    &__about {
+
+        &-text {
+            text-align: center;
+
+            & img {
+                margin-bottom: 30px;
+                max-width: 100%;
+                width: 250px;
+                height: auto;
+            }
+
+            & p {
+                line-height: 24px;  
+            }
+        }
+    }
+}
+
+.sm-links {
+
+    & li {
+        display: inline-block;
+        font-size: 30px;
+        margin-right: 5px;
+        transition: 0.5s ease-in-out;
+
+        &:last-child {
+            margin: 0px;
+        }
+
+        & .facebook:hover {
+            color: map-get($smcolor,facebook);
+        }
+
+        & .instagram:hover {
+            color: map-get($smcolor,instagram);
+        }
+
+        & .youtube:hover {
+            color: map-get($smcolor,youtube); 
+        }
+
+        & .twitter:hover {
+            color: map-get($smcolor,twitter);
+        }
+    }
+}
+
+// ABOUT ME
+
+.about-me {
+    
+    &__description {
+        font-size: 14px;
+    }
+
+    &__sm .iconify {
+        font-size: 30px;
+        margin-right: 5px;
+       
+    }
+}
+
+// CONTACT
+
+.table-contact {
+    display: table;
+    height: 100%;
+
+    & .cell-contact {
+        display: table-cell;
+        vertical-align: middle;
+
+    & .btn {
+        @include post-button-normal;
+        transition: .2s ease-in-out;
+        border-color: map-get($colors,btn);
+        background: map-get($colors,btn);
+        color: #fff;
+
+            &:hover {
+            color: map-get($colors,btn);
+            background: #fff;
+            }
+        }
+    }
+}
+
+// RESOURCES
+
+.table-container {
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+  }
+  
+  .table-wrap table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+    position: relative;
+  }
+  .table-wrap table * {
+    position: relative;
+  }
+  table td, table th {
+    padding-left: 8px;
+  }
+  table thead tr {
+    height: 60px;
+    background: map-get($colors,color-1);
+  }
+  table tbody tr {
+    height: 50px;
+  }
+  table tbody tr:last-child {
+    border: 0;
+  }
+  table td, table th {
+    text-align: center;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color:  map-get($colors,table-row);
+  }
+  
+  tbody tr {
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.2;
+    font-weight: unset;
+
+    & a {
+        display: block;
+        text-decoration: underline;
+
+        &:hover {
+            color: inherit;
+        }
+    }
+  }
+  
+  tbody tr:hover {
+    color: #555555;
+    background-color: map-get($colors,table-row);
+    cursor: pointer;
+  }
+  
+  .column-1 {
+    width: 150px;
+    padding-left: 40px;
+    text-align: left;
+  }
+  
+  .column-2 {
+    width: 350px;
+    text-align: left;
+  }
+  
+  .column-3 {
+    width: 250px;
+    text-align: center;
+  }
+  
+  .column-4 {
+    width: 200px;
+    text-align: center;
+  }
+  
+
+
+// RESPONSIVE
+
+@media all and (max-width: 768px) {
+    .topmenu {
+        display: block;
+    }
+
+    .main {
+        margin-left: 0px;
+        margin-top: 72.08px;
+        
+    }
+
+    .leftmenu {
+        display: none;
+    }
+
+}

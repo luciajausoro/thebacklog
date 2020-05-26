@@ -1,0 +1,27 @@
+
+
+$tr-simple: all .3s ease-out;
+
+@mixin post-button-normal{
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    font-weight: 600;
+    padding: .6rem .8rem;
+    transition: .2s ease-in-out;
+    border-color: map-get($colors,btn);
+    color: map-get($colors,btn);
+}
+
+@mixin post-button-inverted{
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    font-weight: 600;
+    padding: .6rem .8rem;
+    transition: .2s ease-in-out;
+    border-color: map-get($colors,btn);
+    color: map-get($colors,btn);
+}
